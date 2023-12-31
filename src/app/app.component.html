@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Monty Hall Problem</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<main>
+  <div class="doors">
+    <div class="door" (click)="pickDoor(0)">
+      Door 1
+      <img class="goat" *ngIf="doors[0].revealed" [src]="doors[0].imagePath" alt="Goat Image" />
+    </div>
+    <div class="door" (click)="pickDoor(1)">
+      Door 2
+      <img class="goat" *ngIf="doors[1].revealed" [src]="doors[1].imagePath" alt="Goat Image" />
+    </div>
+    <div class="door" (click)="pickDoor(2)">
+      Door 3
+      <img class="goat" *ngIf="doors[2].revealed" [src]="doors[2].imagePath" alt="Goat Image" />
+    </div>
+  </div>
+
+  <div id="instruction">
+    <p id="message">{{ instructionMessage }}</p>
+    <div *ngIf="showSwitchButton">
+      <button (click)="switchDoor(true)">Switch</button>
+      <button (click)="switchDoor(false)">Stay</button>
+    </div>
+    <button *ngIf="showPlayAgainButton" (click)="resetGame()">Play Again</button>
+
+    <!-- Display total switches and stays -->
+    <div *ngIf="totalSwitches !== null && totalStays !== null">
+      <p>Total Switches: {{ totalSwitches }}</p>
+      <p>Total Stays: {{ totalStays }}</p>
+    </div>
+  </div>
+</main>
+</body>
+</html>
+
+
+
+
