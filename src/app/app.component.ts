@@ -29,8 +29,10 @@ export class AppComponent {
   ngOnInit(): void {
     this.getData().subscribe((result) => {
         console.log(result);
-        // Do something with the data
+      },error=>{
+        console.log(error);      
       });
+      console.log("Just started thge page")
       this.doors = this.shuffleArray();
     // this.getData();
   }
@@ -55,17 +57,6 @@ export class AppComponent {
   }
 
 // Shuffle the array
-
-  addRandomDoor() {
-    const randomIndex = Math.floor(Math.random() * this.tempdoors.length);
-    // let randomDoor = this.tempdoors[0];
-    this.doors.push(this.tempdoors[0]);
-    // let randomDoor = this.tempdoors[2];
-    this.doors.push(this.tempdoors[2]);
-    // let randomDoor = this.tempdoors[1];
-    this.doors.push(this.tempdoors[1]);
-
-  }
 
   selectedDoor: number | null = null;
   revealedGoatDoor: number | null = null;
@@ -151,11 +142,12 @@ export class AppComponent {
     // Hide Play Again button on game reset
     this.showPlayAgainButton = false;
 
-    this.tempdoors = [
-      { prize: 'Goat', revealed: false, imagePath: '../assets/montyhall.png' },
-      { prize: 'Goat', revealed: false, imagePath: 'assets/montyhall.png' },
-      { prize: 'Car', revealed: false, imagePath: 'assets/car.jpg' }
-    ];
+    // this.tempdoors = [
+    //   { prize: 'Goat', revealed: false, imagePath: '../assets/montyhall.png' },
+    //   { prize: 'Goat', revealed: false, imagePath: 'assets/montyhall.png' },
+    //   { prize: 'Car', revealed: false, imagePath: 'assets/car.jpg' }
+    // ];
+    this.shuffleArray();
   }
 
 }
