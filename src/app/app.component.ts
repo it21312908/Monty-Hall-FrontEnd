@@ -141,12 +141,7 @@ export class AppComponent {
 
     // Hide Play Again button on game reset
     this.showPlayAgainButton = false;
-
-    // this.tempdoors = [
-    //   { prize: 'Goat', revealed: false, imagePath: '../assets/montyhall.png' },
-    //   { prize: 'Goat', revealed: false, imagePath: 'assets/montyhall.png' },
-    //   { prize: 'Car', revealed: false, imagePath: 'assets/car.jpg' }
-    // ];
+    
     this.shuffleArray();
   }
 
