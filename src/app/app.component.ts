@@ -128,8 +128,6 @@ export class AppComponent {
     }
   }
 
-  
-
   resetGame(): void {
     this.selectedDoor = null;
     this.revealedGoatDoor = null;
@@ -141,7 +139,7 @@ export class AppComponent {
 
     // Hide Play Again button on game reset
     this.showPlayAgainButton = false;
-    
+
     this.shuffleArray();
   }
 
