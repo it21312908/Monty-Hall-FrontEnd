@@ -8,8 +8,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  /* background-color: #f0f0f0; */
-  background-color: #ADD8E6;
+  background-color: 	#EADDCA;
 }
 .doors{
   display: flex;
@@ -20,27 +19,23 @@ main {
   text-align: center;
   width: 65vw;
   margin: auto 15px;
-  /* background-color: aqua; */
 }
 
+
 .door {
-  /*position: relative;*/
   display: flex;
   flex-direction: column;
-  /*background-image: url("./assets/montyhall.png");*/
-  width: 25%;
-  height: 250px;
-  /*line-height: 150px;*/
+  width: 30%;
+  height: 200px;
   font-size: 18px;
   font-weight: bold;
   background-color: #ddd;
   border: 2px solid #aaa;
   border-radius: 5px;
   cursor: pointer;
-  margin: 0 40px;
+  margin: 0 10px;
   transition: transform 0.3s ease-in-out;
   overflow: hidden;
-  background-color: #5C4033;
 }
 
 .door:hover {
@@ -50,12 +45,7 @@ main {
 .goat {
   position: relative;
   height: 100%;
-  /*top: 50%;*/
-  /*left: 50%;*/
-  /*transform: translate(-10%, -10%) scale(0);*/
-  /*transition: transform 0.5s ease-in-out;*/
 }
-
 
 /* Show the goat image */
 .door.revealed .goat {
@@ -65,5 +55,5 @@ main {
 
 .pageTitle{
   margin-bottom: 100px;
-  color: #191970;
+  color: #341903;
 }
