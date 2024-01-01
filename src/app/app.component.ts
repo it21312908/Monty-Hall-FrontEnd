@@ -60,7 +60,7 @@ export class AppComponent {
 
   selectedDoor: number | null = null;
   revealedGoatDoor: number | null = null;
-  instructionMessage = 'Pick a Door!';
+  instructionMessage = 'Pick a Door';
   showSwitchButton = false;
   showPlayAgainButton = false;
 
