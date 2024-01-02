@@ -34,7 +34,6 @@ export class AppComponent {
       });
       console.log("Just started thge page")
       this.doors = this.shuffleArray();
-    // this.getData();
   }
 
   getData(): Observable<any> {
@@ -48,6 +47,8 @@ export class AppComponent {
   ];
   doors:{ prize: string, revealed: boolean, imagePath: string }[] = [];
 
+
+  // Shuffle the array
   shuffleArray() {
     for (let i = this.tempdoors.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -56,8 +57,9 @@ export class AppComponent {
     return this.tempdoors;
   }
 
-// Shuffle the array
 
+
+  //Initialize the values
   selectedDoor: number | null = null;
   revealedGoatDoor: number | null = null;
   instructionMessage = 'Pick a Door';
@@ -66,26 +68,37 @@ export class AppComponent {
 
   totalSwitches = 0;
   totalStays = 0
+
+
+  // Function to handle door selection
   pickDoor(index: number): void {
 
-    // this.doors = this.shuffleArray();
+    // Check if a door has already been selected
     if (this.selectedDoor === null) {
+
+      // Record details
       this.selectedDoor = index;
       this.instructionMessage = 'You selected Door ' + (index + 1) + '. Revealing one of the doors with a goat...';
 
+      // Array to store indices of doors with goats, excluding the selected door
       const goatDoors: number[] = [];
+
+      // Iterate through each door to find doors with goats
       this.doors.forEach((door, i) => {
         if (door.prize === 'Goat' && i !== this.selectedDoor) {
           goatDoors.push(i);
         }
       });
 
+      // Randomly select a door with a goat from the available options
       const randomGoatIndex = goatDoors[Math.floor(Math.random() * goatDoors.length)];
       this.revealedGoatDoor = randomGoatIndex;
 
       this.instructionMessage = `You selected Door ${index + 1}. Door ${randomGoatIndex + 1} has a goat. Do you want to switch or stay?`;
 
       this.showSwitchButton = true;
+
+      // Mark the revealed goat door as 'revealed'
       this.doors[randomGoatIndex].revealed = true;
     }
   }
@@ -128,6 +141,8 @@ export class AppComponent {
     }
   }
 
+  
+
   resetGame(): void {
     this.selectedDoor = null;
     this.revealedGoatDoor = null;
@@ -136,8 +151,6 @@ export class AppComponent {
 
     // Resetting the revealed state for each door
     this.doors.forEach(door => door.revealed = false);
-
-    // Hide Play Again button on game reset
     this.showPlayAgainButton = false;
 
     this.shuffleArray();

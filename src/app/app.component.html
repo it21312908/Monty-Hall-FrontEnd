@@ -9,6 +9,7 @@
   <div class="pageTitle">
     <h1>Welcome to Monty Hall Problem</h1>
   </div>
+
   <div class="doors">
     <div class="door" (click)="pickDoor(0)">
         Door 1
@@ -30,6 +31,7 @@
       <button (click)="switchDoor(true)">Switch</button>
       <button (click)="switchDoor(false)">Stay</button>
     </div>
+
     <button *ngIf="showPlayAgainButton" (click)="resetGame()">Play Again</button>
 
     <!-- Display total switches and stays -->
@@ -41,7 +43,3 @@
 </main>
 </body>
 </html>
-
-
-
-
